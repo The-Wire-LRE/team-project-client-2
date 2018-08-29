@@ -8,6 +8,7 @@ const getBlogs = function () {
   })
 }
 const createBlog = function (data) {
+  console.log('in blog/api and token is ', store.user.token)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/blogs',

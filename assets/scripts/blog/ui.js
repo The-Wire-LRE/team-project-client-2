@@ -3,13 +3,13 @@
 const store = require('../store')
 const api = require('./api.js')
 
-const getBlogs = function (event) {
-  event.preventDefault()
-  $('.content').html('')
-  api.showProposals()
-    .then(ui.showBlogSuccess)
-    .catch(ui.failure)
-}
+// const getBlogs = function (event) {
+//   event.preventDefault()
+//   $('.content').html('')
+//   api.showProposals()
+//     .then(ui.showBlogSuccess)
+//     .catch(ui.failure)
+// }
 
 const createBlogSuccess = function (data) {
   $('#message').text('blog successfully created')
@@ -47,15 +47,6 @@ const onUpdateBlog = (event) => {
     .catch(ui.failure)
 }
 
-// const onGetProposals = (event) => {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   proposalApi.getProposals()
-//     .then(proposalUi.getProposalsSuccess)
-//     .catch(proposalUi.failure)
-// }
-
-const onClearProposal = (event) => {
-  event.preventDefault()
-  proposalUi.clearProposal()
+const onBlogError = function (error) {
+    console.error('in blog ui and error is ', error)
 }

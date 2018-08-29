@@ -46,16 +46,3 @@ const onUpdatePage = (event) => {
     .then(ui.updatePageSuccess)
     .catch(ui.failure)
 }
-
-// const onGetProposals = (event) => {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   proposalApi.getProposals()
-//     .then(proposalUi.getProposalsSuccess)
-//     .catch(proposalUi.failure)
-// }
-
-const onClearProposal = (event) => {
-  event.preventDefault()
-  proposalUi.clearProposal()
-}

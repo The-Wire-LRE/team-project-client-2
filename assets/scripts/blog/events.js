@@ -1,4 +1,6 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
+const api = require('./api.js')
+const ui = require('./ui.js')
 
 const onGetBlogs = (event) => {
   event.preventDefault()
@@ -11,8 +13,12 @@ const onGetBlogs = (event) => {
 const onCreateBlog = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('In onCreateblog in blog events')
+  console.log('In onCreateblog in blog events and the pre-api data is ', data)
   // do api
+  api.createBlog(data)
+    .then(ui.createBlogSuccess)
+    .catch(ui.onBlogError)
+
 }
 
 const onShowBlogs = function (event) {
@@ -37,7 +43,12 @@ const onDeleteBlog = (event) => {
 }
 
 const addHandler = () => {
-  // $('#create-blog-button').on('click', onCreateblog)
+
+    $("#create-blog-button").on("click", () =>
+      $("#create-blog-modal").css("display", "block")
+    );
+
+  $("#create-blog").on("submit", onCreateBlog);
 
 }
 
