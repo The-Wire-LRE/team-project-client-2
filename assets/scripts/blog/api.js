@@ -27,6 +27,7 @@ const showBlogs = function () {
 }
 
 const updateBlog = function (data) {
+  console.log('update blog api running')
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/blogs/' + data.blog.id, // TODO figure out what data & get id
@@ -37,6 +38,7 @@ const updateBlog = function (data) {
   })
 }
 const deleteBlog = function (data) {
+  console.log('delete blog api running')
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/blogs/' + data.blog.id, // TODO figure out what data & get id

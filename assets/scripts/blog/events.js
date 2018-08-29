@@ -14,7 +14,10 @@ const onCreateBlog = function (event) {
 
 const onDeleteBlog = (event) => {
   event.preventDefault()
-  ui.deleteblog()
+  const data = getFormFields(event.target)
+  api.deleteBlog(data)
+    .then(ui.deleteBlogSuccess)
+    .catch(ui.onBlogError)
 }
 
 const onUpdateBlog = (event) => {
@@ -33,18 +36,22 @@ const onShowBlogs = function (event) {
 }
 
 const addHandler = () => {
-  // to launch modals
+  // launches modals on click of action button
   $('#create-blog-button').on('click', () =>
     $('#create-blog-modal').css('display', 'block')
+  )
+  $('#delete-blog-button').on('click', () =>
+    $('#delete-blog-modal').css('display', 'block')
   )
   $('#update-blog-button').on('click', () =>
     $('#update-blog-modal').css('display', 'block')
   )
-  // button actions
+
+  // form-field submission buttons on modals
   $('#create-blog').on('submit', onCreateBlog)
   $('#update-blog').on('submit', onUpdateBlog)
-
   $('#show-blog-button').on('click', onShowBlogs)
+  $('#delete-blog').on('submit', onDeleteBlog)
 }
 
 module.exports = {

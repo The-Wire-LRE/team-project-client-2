@@ -37,18 +37,16 @@ const updatePost = function (data) {
 const deletePost = function (data) {
   return $.ajax({
     method: 'DELETE',
-      url: config.apiUrl + '/posts/' + data.post.id, // TODO figure out what data & get id
-      headers: {
-        Authorization: 'Token token=' + store.user.token
-      }
-    })
+    url: config.apiUrl + '/posts/' + data.post.id, // TODO figure out what data & get id
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
 }
 
-
-
 module.exports = {
-    showPost,
-    createPost,
-    updatePost,
-    deletePost
+  showPost,
+  createPost,
+  updatePost,
+  deletePost
 }

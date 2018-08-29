@@ -33,10 +33,11 @@ const updateBlogSuccess = function (data) {
 }
 
 const deleteBlogSuccess = function (data) {
-  $('#message').text('Example successfully created')
+  console.log('in deleteBlogSuccess')
+  $('#message').text('Blog successfully deleted')
   $('#message').css('background-color', 'green')
   store.proposal = data.proposal
-  console.log('onUpdateSuccess ran. Data is :', data)
+  console.log('onDeleteBlogSuccess ran.')
 }
 
 const onBlogError = function (error) {
