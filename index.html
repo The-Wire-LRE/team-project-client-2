@@ -23,7 +23,7 @@
         <button id='create-post-button'>Create Post</button>
         <button id='show-post-button'>Show Post</button>
         <button id='update-post-button'>Update Post</button>
-      
+
         <div id="modals-here">
           <!--Modals for the authentication. In future want to see if I can make DRYer; handlebars?-->
           <div id='sign-up-modal' class='modal'>
@@ -38,7 +38,7 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='sign-in-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -50,7 +50,7 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='change-password-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -62,21 +62,20 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='create-blog-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
               <form id='create-blog'>
-                <input type='text' name='create-blog-title' placeholder='Blog Title'>
-                <input type='text' id="create-blog-logo" name='create-blog-logo'>
-                <input type='text' name='create-blog-headerImage'>
+                <input type='text' name="blog[title]" placeholder='Blog Title'>
+                <input type='text' id="create-blog-logo" name='blog[logo]' placeholder='Logo String'>
                 <input type='submit' value='Submit'>
               </form>
               <p class='message'></p>
             </div>
           </div>
-      
-      
+
+
           <div id='create-post-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -91,7 +90,7 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='show-post-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -104,7 +103,7 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='update-post-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -120,7 +119,7 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
         </div>
     </body>
 </html>
