@@ -41,12 +41,13 @@ const deleteBlogSuccess = function (data) {
 }
 
 const onBlogError = function (error) {
-    console.error('in blog ui and error is ', error)
+  console.error('in blog ui and error is ', error)
 }
 
 module.exports = {
   createBlogSuccess,
   showBlogsSuccess,
   updateBlogSuccess,
-  deleteBlogSuccess
+  deleteBlogSuccess,
+  onBlogError
 }

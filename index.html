@@ -26,6 +26,8 @@
         <button id='create-post-button'>Create Post</button>
         <button id='show-post-button'>Show Post</button>
         <button id='update-post-button'>Update Post</button>
+        <button id='delete-post-button'>Delete Post</button>
+
 
 
         <div id="modals-here">
@@ -124,7 +126,6 @@
               <form id="show-post" class="border">
                   <legend>Read Post</legend>
                   <input type="text" name="post[blogID]" placeholder="Blog ID">
-                  <input type="text" name="post[id]" placeholder="Post ID">
                   <input type="submit" value="Show Post">
               </form>
               <p class='message'></p>
@@ -142,6 +143,19 @@
                   <input type="text" name="post[blogID]" placeholder="Blog ID">
                   <input type="text" name="post[id]" placeholder="Post ID">
                   <input type="submit" value="Update Post">
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
+          <div id='delete-post-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id="delete-post" class="border">
+                  <legend>delete Post</legend>
+                  <input type="text" name="post[blogID]" placeholder="Blog ID">
+                  <input type="text" name="post[id]" placeholder="Post ID">
+                  <input type="submit" value="Delete Post">
               </form>
               <p class='message'></p>
             </div>
