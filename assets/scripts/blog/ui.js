@@ -21,9 +21,17 @@ const createBlogSuccess = function (data) {
 const showBlogsSuccess = function (data) {
   $('#message').text('blog successfully created')
   $('#message').css('background-color', 'green')
-  store.proposal = data.proposal
+  // store.proposal = data.proposal
   console.log('onShowBlogSuccess ran. Data is :', data)
-}
+
+  // data returned is an array of blog objects
+  for ( let i=0; i < data.length; i++) {
+    $('#blogs ul').append(`<li>
+            <h1>${data[i].title}</h1>
+            <p>${data[i].logo}</p>
+            </li>`)
+  }
+ }
 
 const updateBlogSuccess = function (data) {
   $('#message').text('Example successfully created')
