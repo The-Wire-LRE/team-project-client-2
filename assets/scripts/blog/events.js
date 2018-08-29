@@ -1,6 +1,6 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 
-const onGetblogs = (event) => {
+const onGetBlogs = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.getblogs()
@@ -8,14 +8,14 @@ const onGetblogs = (event) => {
     .catch(proposalUi.failure)
 }
 
-const onCreateblog = function (event) {
+const onCreateBlog = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log('In onCreateblog in blog events')
   // do api
 }
 
-const onShowblogs = function (event) {
+const onShowBlogs = function (event) {
   event.preventDefault()
   $('.content').html('')
   api.showProposals()
@@ -23,7 +23,7 @@ const onShowblogs = function (event) {
     .catch(ui.onError)
 }
 
-const onUpdateblog = (event) => {
+const onUpdateBlog = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.updateProposal(data)
@@ -31,7 +31,7 @@ const onUpdateblog = (event) => {
     .catch(ui.failure)
 }
 
-const onDeleteblog = (event) => {
+const onDeleteBlog = (event) => {
   event.preventDefault()
   ui.deleteblog()
 }

@@ -1,13 +1,13 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
-const getblogs = function () {
+const getBlogs = function () {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/blogs',
   })
 }
-const createblog = function (data) {
+const createBlog = function (data) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/blogs',
@@ -18,14 +18,14 @@ const createblog = function (data) {
   })
 }
 // since it is singular, should it be 'blog"?
-const showblog = function () {
+const showBlog = function () {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/blogs',
   })
 }
 
-const updateblog = function (data) {
+const updateBlog = function (data) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/blogs/' + data.blog.id, // TODO figure out what data & get id
@@ -35,7 +35,7 @@ const updateblog = function (data) {
     data
   })
 }
-const deleteblog = function (data) {
+const deleteBlog = function (data) {
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/blogs/' + data.blog.id, // TODO figure out what data & get id
@@ -46,9 +46,9 @@ const deleteblog = function (data) {
 }
 
 module.exports = {
-  getblogs,
-  createblog,
-  showblog,
-  updateblog,
-  deleteblog
+  getBlogs,
+  createBlog,
+  showBlog,
+  updateBlog,
+  deleteBlog
 }
