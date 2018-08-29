@@ -1,12 +1,12 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
-const getBlogs = function () {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/blogs',
-  })
-}
+// const getBlogs = function () {
+//   return $.ajax({
+//     method: 'GET',
+//     url: config.apiUrl + '/blogs',
+//   })
+// }
 const createBlog = function (data) {
   console.log('in blog/api and token is ', store.user.token)
   return $.ajax({
@@ -19,7 +19,7 @@ const createBlog = function (data) {
   })
 }
 // since it is singular, should it be 'blog"?
-const showBlog = function () {
+const showBlogs = function () {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/blogs',
@@ -47,9 +47,9 @@ const deleteBlog = function (data) {
 }
 
 module.exports = {
-  getBlogs,
+  // getBlogs,
   createBlog,
-  showBlog,
   updateBlog,
-  deleteBlog
+  deleteBlog,
+  showBlogs
 }

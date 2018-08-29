@@ -1,7 +1,7 @@
 const getFormFields = require("../../../lib/get-form-fields.js");
 const api = require("./api.js");
 const ui = require("./ui.js");
-
+const blogEvents = require('../blog/events.js')
 /* GA message:
 Function which runs when a user enters data into signup form
 Use getFormFields to get data from input
@@ -29,6 +29,10 @@ const onSignIn = function(event) {
   api
     .signIn(data)
     .then(ui.signInSuccess)
+    // .then(() => {
+    //   console.log('after sign in success')
+    //   blogEvents.onShowBlogs()
+    // })
     .catch(ui.signInFailure);
 };
 

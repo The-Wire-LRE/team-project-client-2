@@ -20,6 +20,8 @@
         <!--sign out does not currently display error when cannot connect to server-->
         <button id='sign-out-button'>Sign Out</button>
         <button id='create-blog-button'>Create Blog</button>
+        <button id='update-blog-button'>Update Blog</button>
+        <button id='show-blog-button'>Show Blogs</button>
         <button id='create-post-button'>Create Post</button>
         <button id='show-post-button'>Show Post</button>
         <button id='update-post-button'>Update Post</button>
@@ -69,6 +71,19 @@
               <form id='create-blog'>
                 <input type='text' name="blog[title]" placeholder='Blog Title'>
                 <input type='text' id="create-blog-logo" name='blog[logo]' placeholder='Logo String'>
+                <input type='submit' value='Submit'>
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
+          <div id='update-blog-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id='update-blog'>
+                <input type='text' name="blog[id]" placeholder='Blog ID'>
+                <input type='text' name="blog[title]" placeholder='Blog Title'>
+                <input type='text' name='blog[logo]' placeholder='Logo String'>
                 <input type='submit' value='Submit'>
               </form>
               <p class='message'></p>
