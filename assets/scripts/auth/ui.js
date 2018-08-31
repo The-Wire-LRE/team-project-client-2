@@ -23,7 +23,8 @@ const signUpSuccess = function(data) {
 const signUpFailure = function(err) {
   console.log("sign up failure ran");
   document.getElementById("sign-up").reset();
-  $(".message").text("Error on sign up.");
+  $(".message").text("Error on sign up");
+  setTimeout(closeModal, 1000);
 };
 
 const signInSuccess = function(data) {
@@ -41,13 +42,13 @@ const signInSuccess = function(data) {
   // used later to authenticate user w token
   store.user = data.user;
   console.log(store);
-
   setTimeout(closeModal, 1000);
 };
 
 const signInFailure = function(err) {
   document.getElementById("sign-in").reset();
   $(".message").text("Error on sign in. Please check your password.");
+  window.setTimeout(closeModal, 1000);
 };
 
 const changePasswordSuccess = function(data) {
@@ -58,12 +59,12 @@ const changePasswordSuccess = function(data) {
 
 const changePasswordFailure = function(err) {
   document.getElementById("change-password").reset();
-  $(".message").text("Error on change password.");
+  $(".message").text("Error on change password");
+  window.setTimeout(closeModal, 1000);
 };
 
 const signOutSuccess = function(data) {
-  // this message displays nowhere because there is no modal.
-  // think it's okay b/c pretty obvious user signed out.
+  $("#sign-out-modal").css("display", "block")
   $(".message").text("Signed out successfully");
   $("#sign-up-button, #sign-in-button").css("display", "inline");
   $("#sign-out-button, #change-password-button, \
@@ -72,12 +73,14 @@ const signOutSuccess = function(data) {
     ).css("display", "none");
   $('#blogs ul').empty()
   store.user = null;
+  window.setTimeout(closeModal, 1000);
 };
 
 // TODO probably need to introduce a modal for sign out error...
 const signOutFailure = function(err) {
-  document.getElementById("sign-out").reset();
+  $("#sign-out-modal").css("display", "block")
   $(".message").text("Error on sign out.");
+  window.setTimeout(closeModal, 1000);
 };
 
 const closeModal = function() {
