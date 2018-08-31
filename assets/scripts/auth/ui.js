@@ -33,7 +33,10 @@ const signInSuccess = function(data) {
   $(".message").text("Signed in successfully");
   // changes sign in/out buttons to display depending whether user is signed in
   $("#sign-up-button, #sign-in-button").css("display", "none");
-  $("#sign-out-button, #change-password-button").css("display", "inline");
+  $("#sign-out-button, #change-password-button, \
+      #create-blog-button, #update-blog-button, #delete-blog-button, #show-blog-button, \
+      #create-post-button, #update-post-button, #delete-post-button, #show-post-button"
+    ).css("display", "inline");
   // stores the user data.
   // used later to authenticate user w token
   store.user = data.user;
@@ -63,7 +66,11 @@ const signOutSuccess = function(data) {
   // think it's okay b/c pretty obvious user signed out.
   $(".message").text("Signed out successfully");
   $("#sign-up-button, #sign-in-button").css("display", "inline");
-  $("#sign-out-button, #change-password-button").css("display", "none");
+  $("#sign-out-button, #change-password-button, \
+      #create-blog-button, #update-blog-button, #delete-blog-button, #show-blog-button, \
+      #create-post-button, #update-post-button, #delete-post-button, #show-post-button"
+    ).css("display", "none");
+  $('#blogs ul').empty()
   store.user = null;
 };
 

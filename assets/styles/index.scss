@@ -1,1 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+
+// start the buttons not displayed.
+#sign-out-button, #change-password-button,
+#create-blog-button, #update-blog-button, #delete-blog-button, #show-blog-button,
+#create-post-button, #update-post-button, #delete-post-button, #show-post-button {
+    display: none;
+}

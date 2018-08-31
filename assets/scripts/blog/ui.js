@@ -12,6 +12,7 @@ const api = require('./api.js')
 // }
 
 const createBlogSuccess = function (data) {
+  document.getElementById('create-blog').reset();
   $('#message').text('blog successfully created')
   $('#message').css('background-color', 'green')
   store.proposal = data.proposal
@@ -34,6 +35,7 @@ const showBlogsSuccess = function (data) {
 }
 
 const updateBlogSuccess = function (data) {
+  document.getElementById('update-blog').reset();
   $('#message').text('Example successfully created')
   $('#message').css('background-color', 'green')
   store.proposal = data.proposal
@@ -41,6 +43,7 @@ const updateBlogSuccess = function (data) {
 }
 
 const deleteBlogSuccess = function (data) {
+  document.getElementById('delete-blog').reset();
   console.log('in deleteBlogSuccess')
   $('#message').text('Blog successfully deleted')
   $('#message').css('background-color', 'green')
