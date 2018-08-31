@@ -23,6 +23,13 @@ const showPostsSuccess = function (data) {
   $('#message').css('background-color', 'green')
   store.proposal = data.proposal
   console.log('onShowPostSuccess ran. Data is :', data)
+  // data returned is an array of post objects
+  for (let i=0; i < data.length; i++) {
+    $('#posts ul').append(`<li>
+              <h1>${data[i].title}</h1>
+              <p>${data[i].logo}</p>
+              </li>`)
+  }
 }
 
 const updatePostSuccess = function (data) {
