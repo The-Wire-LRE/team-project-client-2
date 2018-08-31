@@ -20,10 +20,20 @@
         <!--sign out does not currently display error when cannot connect to server-->
         <button id='sign-out-button'>Sign Out</button>
         <button id='create-blog-button'>Create Blog</button>
+        <button id='update-blog-button'>Update Blog</button>
+        <button id='delete-blog-button'>Delete Blog</button>
+        <button id='show-blog-button'>Show Blogs</button>
         <button id='create-post-button'>Create Post</button>
         <button id='show-post-button'>Show Post</button>
         <button id='update-post-button'>Update Post</button>
-      
+        <button id='delete-post-button'>Delete Post</button>
+        <button id='create-page-button'>Create Page</button>
+        <button id='show-page-button'>Show Page</button>
+        <button id='update-page-button'>Update Page</button>
+        <button id='delete-page-button'>Delete Page</button>
+
+
+
         <div id="modals-here">
           <!--Modals for the authentication. In future want to see if I can make DRYer; handlebars?-->
           <div id='sign-up-modal' class='modal'>
@@ -38,7 +48,7 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='sign-in-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -50,7 +60,7 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='change-password-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -62,21 +72,43 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='create-blog-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
               <form id='create-blog'>
-                <input type='text' name='create-blog-title' placeholder='Blog Title'>
-                <input type='text' id="create-blog-logo" name='create-blog-logo'>
-                <input type='text' name='create-blog-headerImage'>
+                <input type='text' name="blog[title]" placeholder='Blog Title'>
+                <input type='text' id="create-blog-logo" name='blog[logo]' placeholder='Logo String'>
                 <input type='submit' value='Submit'>
               </form>
               <p class='message'></p>
             </div>
           </div>
-      
-      
+
+          <div id='update-blog-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id='update-blog'>
+                <input type='text' name="blog[id]" placeholder='Blog ID'>
+                <input type='text' name="blog[title]" placeholder='Blog Title'>
+                <input type='text' name='blog[logo]' placeholder='Logo String'>
+                <input type='submit' value='Submit'>
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
+          <div id='delete-blog-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id='delete-blog'>
+                <input type='text' name="blog[id]" placeholder='Blog ID'>
+                <input type='submit' value='Submit'>
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
           <div id='create-post-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -91,20 +123,19 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='show-post-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
               <form id="show-post" class="border">
                   <legend>Read Post</legend>
                   <input type="text" name="post[blogID]" placeholder="Blog ID">
-                  <input type="text" name="post[id]" placeholder="Post ID">
                   <input type="submit" value="Show Post">
               </form>
               <p class='message'></p>
             </div>
           </div>
-      
+
           <div id='update-post-modal' class='modal'>
             <div class='modal-content'>
               <span class="close">&times;</span>
@@ -120,7 +151,80 @@
               <p class='message'></p>
             </div>
           </div>
-      
+
+          <div id='delete-post-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id="delete-post" class="border">
+                  <legend>delete Post</legend>
+                  <input type="text" name="post[blogID]" placeholder="Blog ID">
+                  <input type="text" name="post[id]" placeholder="Post ID">
+                  <input type="submit" value="Delete Post">
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
+          <div id='create-page-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id="create-page" class="border">
+                  <legend>Create Page</legend>
+                  <input type="text" name="page[image]" placeholder="Page Image">
+                  <input type="text" name="page[title]" placeholder="Page Title">
+                  <input type="text" name="page[text]" placeholder="Page Text">
+                  <input type="text" name="page[blogID]" placeholder="Blog ID">
+                  <input type="submit" value="Create Page">
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
+          <div id='show-page-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id="show-page" class="border">
+                  <legend>Read Page</legend>
+                  <input type="text" name="page[blogID]" placeholder="Blog ID">
+                  <input type="submit" value="Show Page">
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
+          <div id='update-page-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id="update-page" class="border">
+                  <legend>Update Page</legend>
+                  <input type="text" name="page[image]" placeholder="Page Image">
+                  <input type="text" name="page[title]" placeholder="Page Title">
+                  <input type="text" name="page[text]" placeholder="Page Text">
+                  <input type="text" name="page[blogID]" placeholder="Blog ID">
+                  <input type="text" name="page[id]" placeholder="Page ID">
+                  <input type="submit" value="Update Page">
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
+          <div id='delete-page-modal' class='modal'>
+            <div class='modal-content'>
+              <span class="close">&times;</span>
+              <form id="delete-page" class="border">
+                  <legend>delete Page</legend>
+                  <input type="text" name="page[blogID]" placeholder="Blog ID">
+                  <input type="text" name="page[id]" placeholder="Page ID">
+                  <input type="submit" value="Delete Page">
+              </form>
+              <p class='message'></p>
+            </div>
+          </div>
+
         </div>
+        <!-- end modals div -->
+      <div id='blogs'>
+        <ul></ul>
+      </div>
     </body>
 </html>
