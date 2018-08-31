@@ -19,10 +19,24 @@ const createPageSuccess = function (data) {
 }
 
 const showPageSuccess = function (data) {
-  $('#message').text('Page successfully created')
+  $('#message').text('blog successfully created')
   $('#message').css('background-color', 'green')
-  store.proposal = data.proposal
-  console.log('onCreatePageSuccess ran. Data is :', data)
+  // store.proposal = data.proposal
+  console.log('onShowBlogSuccess ran. Data is :', data)
+
+  // data returned is an array of blog objects
+  for ( let i=0; i < data.length; i++) {
+    const updateElem = document.createElement("button")
+    $(updateElem).click(function(event) {
+      // find nearest element and get id
+      // run update function
+    })
+    $('#pages ul').append(`<li>
+              <h1>${data[i].title}</h1>
+              <p>${data[i].logo}</p>
+              ${updateElem}
+              </li>`)
+  }
 }
 
 const updatePageSuccess = function (data) {

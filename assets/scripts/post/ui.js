@@ -28,6 +28,8 @@ const showPostsSuccess = function (data) {
     $('#posts ul').append(`<li>
               <h1>${data[i].title}</h1>
               <p>${data[i].logo}</p>
+              <p>${data[i].blogID}</p>
+              <p>${data[i]._id}</p>
               </li>`)
   }
 }

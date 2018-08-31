@@ -25,13 +25,13 @@ const showBlogsSuccess = function (data) {
   console.log('onShowBlogSuccess ran. Data is :', data)
 
   // data returned is an array of blog objects
-  for ( let i=0; i < data.length; i++) {
+  for (let i = 0; i < data.length; i++) {
     $('#blogs ul').append(`<li>
             <h1>${data[i].title}</h1>
             <p>${data[i].logo}</p>
             </li>`)
   }
- }
+}
 
 const updateBlogSuccess = function (data) {
   $('#message').text('Example successfully created')
